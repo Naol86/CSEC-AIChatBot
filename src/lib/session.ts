@@ -8,6 +8,10 @@ export async function setSession(
     id: string;
     token: string;
     email: string;
+    firstName: string;
+    lastName: string;
+    profilePicture: string;
+    isEmailVerified: boolean;
   }
 ) {
   const session = await getServerSession(authOptions);
