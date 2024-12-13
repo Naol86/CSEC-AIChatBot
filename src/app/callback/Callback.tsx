@@ -10,6 +10,7 @@ const Callback = () => {
 
   useEffect(() => {
     const token = searchParams.get("token");
+    console.log("token", token);
 
     const login = async (token: string) => {
       try {
@@ -23,11 +24,11 @@ const Callback = () => {
         } else {
           // Handle sign-in errors
           console.error("Sign-in error:", result?.error);
-          router.push("/error"); // Redirect to an error page
+          router.push("/auth/signin"); // Redirect to an error page
         }
       } catch (err) {
         console.error("Unexpected error during sign-in:", err);
-        router.push("/error"); // Redirect to an error page
+        router.push("/auth/signin"); // Redirect to an error page
       }
     };
 
@@ -43,4 +44,3 @@ const Callback = () => {
 };
 
 export default Callback;
-
