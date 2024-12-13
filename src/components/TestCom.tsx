@@ -18,7 +18,8 @@ export default function TestCom() {
 
   const handleGoogleSignIn = () => {
     // Redirect to your NestJS backend Google OAuth endpoint
-    window.location.href = "http://localhost:8000/auth/google";
+    window.location.href =
+      "https://stuck-selma-naolteach-82254a1d.koyeb.app/auth/google";
   };
 
   return (

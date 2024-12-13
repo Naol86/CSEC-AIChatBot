@@ -22,17 +22,20 @@ export default function ChatForm() {
     setFormData({ message: "" });
 
     try {
-      const res = await fetch(`http://localhost:8000/chats`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${session?.user.token}`,
-        },
-        body: JSON.stringify({
-          content: formData.message,
-          chat_id: currentChatId,
-        }),
-      });
+      const res = await fetch(
+        `https://stuck-selma-naolteach-82254a1d.koyeb.app/chats`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${session?.user.token}`,
+          },
+          body: JSON.stringify({
+            content: formData.message,
+            chat_id: currentChatId,
+          }),
+        }
+      );
 
       const response = await res.json();
 

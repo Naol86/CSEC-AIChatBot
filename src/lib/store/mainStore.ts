@@ -43,7 +43,7 @@ export const useMainStore = create<SidebarState>((set, get) => ({
       }
 
       const response = await fetch(
-        `http://localhost:8000/chats/${chatId}/messages`,
+        `https://stuck-selma-naolteach-82254a1d.koyeb.app/chats/${chatId}/messages`,
         {
           method: "GET",
           headers: {
@@ -89,13 +89,16 @@ export const useMainStore = create<SidebarState>((set, get) => ({
         throw new Error("No token available");
       }
 
-      const response = await fetch(`http://localhost:8000/chats`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        `https://stuck-selma-naolteach-82254a1d.koyeb.app/chats`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await response.json();
       set(() => ({ chats: data.data }));
     } catch (error) {

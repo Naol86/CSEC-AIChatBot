@@ -43,7 +43,9 @@ export default function LoginPage() {
   });
 
   const handleGoogle = () => {
-    const res = redirect(`http://localhost:8000/auth/google`);
+    const res = redirect(
+      `https://stuck-selma-naolteach-82254a1d.koyeb.app/auth/google`
+    );
     console.log("res is ", res);
   };
   const router = useRouter();
